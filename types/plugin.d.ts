@@ -60,7 +60,7 @@ declare namespace Plugin {
    *
    * @see {@link https://github.com/local-bias/kintone-plugin-template | kintone-plugin-template}
    */
-  type Config = {
+  type Env = {
     id: string;
     version?: 1;
     manifest: {

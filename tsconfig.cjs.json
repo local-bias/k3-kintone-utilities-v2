@@ -9,5 +9,6 @@
     "types": ["node"],
     "outDir": "dist/cjs"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/bin/**/*"]
 }
