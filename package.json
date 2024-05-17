@@ -1,6 +1,6 @@
 {
-  "name": "@ribbit/kintone",
-  "version": "0.0.1",
+  "name": "@konomi-app/kintone",
+  "version": "0.0.3",
   "keywords": [],
   "author": "Adachi",
   "license": "ISC",
@@ -15,7 +15,7 @@
     "kintone.d.ts"
   ],
   "bin": {
-    "kbuild": "./bin/kbuild/index.mjs"
+    "kbuild": "bin/kbuild/index.mjs"
   },
   "engines": {
     "node": ">=20.0.0"
