@@ -11,7 +11,8 @@
   "files": [
     "bin",
     "dist",
-    "types.d.ts"
+    "types",
+    "kintone.d.ts"
   ],
   "bin": {
     "kbuild": "./bin/kbuild/index.mjs"
