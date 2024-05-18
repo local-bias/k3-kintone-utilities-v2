@@ -2,8 +2,10 @@
   "name": "playground",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "link": "npm link @konomi-app/kintone"
+    "link": "npm link @konomi-app/kintone",
+    "plugin": "kplugin"
   },
   "keywords": [],
   "author": "",
