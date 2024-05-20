@@ -1,10 +1,11 @@
 {
   "name": "@konomi-app/kintone",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "keywords": [],
   "author": "Adachi",
   "license": "ISC",
   "description": "",
+  "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -15,8 +16,8 @@
     "kintone.d.ts"
   ],
   "bin": {
-    "kbuild": "dist/esm/bin/kbuild/index.js",
-    "kplugin": "dist/esm/bin/kplugin/index.js"
+    "kbuild": "bin/kbuild/index.mjs",
+    "plugin": "dist/esm/bin/plugin/index.js"
   },
   "engines": {
     "node": ">=20.0.0"

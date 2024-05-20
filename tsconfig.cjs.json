@@ -10,5 +10,6 @@
     "outDir": "dist/cjs"
   },
   "include": ["src"],
-  "exclude": ["src/bin/**/*"]
+  "exclude": ["src/bin/**/*"],
+  "files": ["kintone.d.ts"]
 }
