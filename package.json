@@ -15,6 +15,16 @@
     "types",
     "kintone.d.ts"
   ],
+  "exports": {
+    "./client": {
+      "import": "./dist/esm/client/index.js",
+      "require": "./dist/cjs/client/index.js"
+    },
+    "./server": {
+      "import": "./dist/esm/server/index.js",
+      "require": "./dist/cjs/server/index.js"
+    }
+  },
   "bin": {
     "kbuild": "bin/kbuild/index.mjs",
     "plugin": "dist/esm/bin/plugin/index.js"
