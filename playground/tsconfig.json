@@ -12,5 +12,5 @@
     "declarationMap": true
   },
   "include": ["src"],
-  "files": ["./node_modules/@konomi-app/kintone/kintone.d.ts"]
+  "files": ["./node_modules/@konomi-app/kintone/types.d.ts"]
 }

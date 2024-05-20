@@ -11,5 +11,5 @@
   },
   "include": ["src"],
   "exclude": ["src/bin/**/*"],
-  "files": ["kintone.d.ts"]
+  "files": ["types.d.ts"]
 }

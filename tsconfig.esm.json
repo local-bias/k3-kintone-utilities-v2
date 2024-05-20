@@ -12,5 +12,5 @@
     "declarationMap": true
   },
   "include": ["src"],
-  "files": ["kintone.d.ts"]
+  "files": ["types.d.ts"]
 }
