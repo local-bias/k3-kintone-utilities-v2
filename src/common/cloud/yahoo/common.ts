@@ -7,6 +7,9 @@ export class YahooAPIClient {
   readonly #clientId: string;
   protected readonly _fetch: CompatibleFetch;
 
+  protected _retryLimit = 10;
+  protected _retryInterval = 3000;
+
   /** APIを最後に実行した時刻 */
   #lastRequested = 0;
 
@@ -33,28 +36,31 @@ export class YahooAPIClient {
     }
 
     let response: CompatibleFetchResponse<T> | null = null;
-    const tryCount = 0;
-    while (tryCount < 10) {
+    let tryCount = 0;
+    while (tryCount < this.retryLimit) {
       try {
         response = await func();
         if (this.#debug) console.log('📥 api response', response);
         this.#lastRequested = new Date().getTime();
 
         if (response.status === 429) {
-          await new Promise((resolve) => setTimeout(resolve, 1000));
+          await new Promise((resolve) =>
+            setTimeout(resolve, this.retryInterval)
+          );
           response = await func();
           this.#lastRequested = new Date().getTime();
           if (this.#debug)
             console.log(
-              '⚠ APIレートの上限に達しました。1秒待機して再実行します。'
+              `⚠ APIレートの上限に達しました。${this.retryInterval}ミリ秒待機して再実行します。`
             );
         } else {
           break;
         }
+        tryCount++;
       } catch (error) {
         this.#lastRequested = new Date().getTime();
         console.error('⚠️Yahoo API実行時にエラーが発生しました', error);
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, this.retryInterval));
       }
     }
 
@@ -70,5 +76,21 @@ export class YahooAPIClient {
 
   protected get debug() {
     return this.#debug;
+  }
+
+  public get retryLimit() {
+    return this._retryLimit;
+  }
+
+  public get retryInterval() {
+    return this._retryInterval;
+  }
+
+  public set retryLimit(value: number) {
+    this._retryLimit = value;
+  }
+
+  public set retryInterval(value: number) {
+    this._retryInterval = value;
   }
 }

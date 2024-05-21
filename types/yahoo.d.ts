@@ -90,6 +90,7 @@ declare namespace Yahoo {
     type RequestParams = {
       appid: string;
       query?: string;
+      jan_code?: string;
       results?: number;
       start?: number;
       user_rank?: string;
@@ -97,6 +98,7 @@ declare namespace Yahoo {
       sale_start_from?: number;
       sale_start_to?: number;
       price_from?: number;
+      image_size?: 76 | 106 | 132 | 146 | 300 | 600;
       price_to?: number;
       sort?: '+price' | '-price' | '+score' | '-score';
       condition?: 'used' | 'new';
