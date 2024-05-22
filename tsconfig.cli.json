@@ -7,9 +7,10 @@
     "strict": true,
     "lib": ["ESNext", "DOM"],
     "types": ["node"],
-    "outDir": "dist/cjs"
+    "outDir": "dist/cli",
+    "declaration": true,
+    "declarationMap": true
   },
-  "include": ["src"],
-  "exclude": ["src/bin/**/*"],
+  "include": ["src/bin"],
   "files": ["types.d.ts"]
 }

@@ -28,7 +28,7 @@
   },
   "bin": {
     "kbuild": "bin/kbuild/index.mjs",
-    "plugin": "dist/esm/bin/plugin/index.js"
+    "plugin": "dist/cli/plugin/index.js"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -36,8 +36,9 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "rmdir /s /q dist & concurrently \"npm run build:*\"",
-    "build:cjs": "tsc --project tsconfig.cjs.json",
-    "build:esm": "tsc --project tsconfig.esm.json"
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "build:esm": "tsc",
+    "build:cli": "tsc --project tsconfig.cli.json"
   },
   "dependencies": {
     "chalk": "^5.3.0",

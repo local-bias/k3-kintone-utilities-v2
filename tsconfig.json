@@ -12,5 +12,6 @@
     "declarationMap": true
   },
   "include": ["src"],
+  "exclude": ["src/bin"],
   "files": ["types.d.ts"]
 }
